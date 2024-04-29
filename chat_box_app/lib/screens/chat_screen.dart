@@ -1,6 +1,9 @@
+import 'package:chat_box_app/widgets/chat_messages.dart';
+import 'package:chat_box_app/widgets/new_message.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 // import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
@@ -31,8 +34,11 @@ class ChatScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: const Center(
-        child: Text('Logged In!'),
+      body: const Column(
+        children: [
+          Expanded(child: ChatMessages()),
+          NewMessage(),
+        ],
       ),
     );
   }
